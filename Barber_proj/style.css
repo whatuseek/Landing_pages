@@ -212,6 +212,38 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
+.social-media {
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
+.social-media a{
+    text-decoration: none;
+    color: #222;
+}
+.sm-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+ 
+}
+
+.sm-container li {
+  font-family: var(--primary-font);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.follow {
+  background-color: #37132d;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
 
 
 
