@@ -15,14 +15,20 @@
 /* Nav */
 nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    /* 🔹 Align items horizontally */
     justify-content: space-between;
+    /* 🔹 Push logo left, burger right */
     align-items: center;
-    padding: 20px;
+    /* 🔹 Vertically center both */
+    padding: 1rem 2rem;
+    /* 🔹 Add spacing on left/right */
 }
 
+
+
 .logo {
-    margin-left: 5rem;
+    margin: 0;
 }
 
 nav .logo h1 {
@@ -30,13 +36,17 @@ nav .logo h1 {
     font-weight: lighter;
 }
 
+
+.logo {
+    font-size: 1.5rem;
+    font-family: var(--main-font);
+}
+
 .burger {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: .5px;
     cursor: pointer;
-    margin-right: 5rem;
 }
 
 .burger span {
@@ -54,37 +64,42 @@ nav .logo h1 {
 /* header */
 header {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    height: 90vh;
-    /* border: 2px solid red; */
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    margin-top: 5rem;
 }
 
-.main-headings {
-    font-size: 3rem;
-    font-family: var(--main-font);
-    transform: translateY(-40px);
-    color: #00000095;
-    line-height: 4rem;
-}
+
+ header {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 4rem;
+  }
+
+  .header-content,
+  .img-container {
+    width: 48%;
+  }
+
 
 .main-headings span {
     color: black;
 }
 
 .primary-headings {
-    max-width: 500px;
-    font-family: var(--primary-font);
-    line-height: 25px;
-    margin-bottom: 1.5rem;
-    color: #716d6d;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .btn-fill {
     font-family: var(--primary-font);
     font-weight: normal;
-
     background-color: var(--main-color);
     color: #fff;
     padding: 10px 20px;
@@ -109,15 +124,13 @@ header {
     cursor: pointer;
     transition: all .3s ease-in;
 }
-.btn-outline.active:hover{
-    background-color:var(--main-color);
-    color:#fff
+
+.btn-outline.active:hover {
+    background-color: var(--main-color);
+    color: #fff
 }
-header .header-img .img-container{
-    border-radius: 50%;
-    box-shadow: 4px 7px 5px 2px #bcbabb;
-}
-.header-img{
+
+.header-img {
     border-radius: 100%;
     background: url("./images/oswaldo-ibanez-1NPUmTaiMeg-unsplash.jpg");
     background-position: top;
@@ -126,18 +139,31 @@ header .header-img .img-container{
     width: 300px;
     height: 300px;
 }
+
+.header-img {
+    box-shadow: 9px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
 /* Header end */
 
-/*Section one  */
-.section-one{
+
+/* responsive for Mobile 1st */
+.section-one {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    /* position: relative; */
-    margin-top: 7px;
+    text-align: center;
+    gap: 2rem;
+    padding: 1rem;
+     padding: clamp(1rem, 5vw, 4rem);
+
 }
-.section-one-img{
+
+.primary-heading {
+    /* DRY, already used in the header section */
+}
+
+.section-one-img {
     background: url("./images/gesphotoss-1i9K55ni5Dk-unsplash.jpg");
     background-position: top;
     background-size: cover;
@@ -145,18 +171,33 @@ header .header-img .img-container{
     width: 300px;
     height: 300px;
 }
-/* Section one end */
 
-/* Section Products */
-.products{
-        margin-top: 7px;
+.section-one .section-content button {
+    /* background-color: beige; */
+    background-color: #239b7e;
+    /* margin-bottom: 3rem; */
+}
 
+/* Section one end  */
+
+
+/*  Products */
+.products {
+    margin-top: 7px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-.btn-outline{
+
+.products .products-headings {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.btn-outline {
     border: 2px solid #ccc;
     color: #ccc;
     background: transparent;
@@ -164,7 +205,233 @@ header .header-img .img-container{
     cursor: pointer;
     transition: all 0.5s ease-out;
 }
-.btn-outline:hover{
+
+.btn-outline:hover {
     border-color: var(--main-color);
-  color: var(--main-color);
+    color: var(--main-color);
+}
+
+/* Good for larger */
+/* .products .product-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 60rem;
+}
+.products .product-items-container .item {
+    margin: 20px;
+} */
+
+/* For small screen , Default*/
+.product-items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.item {
+    /* background-color: #716d6d; */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+}
+
+.products .product-items-container .item-layer {
+    /* margin: 20px; */
+    background-color: rgba(209, 221, 221, 0.693);
+    padding: 30px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.products .product-items-container .item-layer img {
+    width: 150px;
+    height: 200px;
+}
+
+.products .product-items-container .item .item-name {
+    font-family: var(--primary-font);
+    margin-bottom: 10px;
+}
+
+.products .product-items-container .item .item-price {
+    font-family: var(--primary-font);
+    margin-bottom: 10px;
+
+}
+
+.products .product-items-container .item .view-product {
+    font-family: var(--primary-font);
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+/* Customer review */
+.customers-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.customer {
+    text-align: center;
+}
+
+.customer h1 {
+    text-align: center;
+}
+
+.customers-heading {
+    font-family: var(--primary-font);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top: 7rem;
+}
+
+.customers-reviews .customer-description {
+    /* background-color: gray; */
+    font-size: 12px;
+    margin-top: 20px;
+    max-width: 200px;
+    text-align: center;
+    margin: 10px;
+    font-family: var(--primary-font);
+}
+
+.customer .customer-img .img {
+    /* background-color: #716d6d76; */
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-size: cover;
+    background-position: top;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.customer-img .img-one {
+    background: url(./images/yogendra-singh-uWs_N5Dlyiw-unsplash.jpg);
+}
+
+.customer-img .img-two {
+    background: url(./images/alireza-esmaeeli-BGSZ1t80rpM-unsplash.jpg);
+}
+
+.customer-img .img-three {
+    background: url(./images/milan-popovic-kOnmHdLJTNI-unsplash.jpg);
+    /* background: url(./images/milan-popovic-kOnmHdLJTNI-unsplash.jpg); */
+}
+
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    background-color: #1f1e1e;
+    color: #fff;
+    font-family: var(--primary-font);
+}
+
+
+
+@media screen and (min-width:600px) {
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+    }
+
+    .logo {
+        margin-left: 0;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 4rem;
+    }
+
+    .header-content,
+    .img-container {
+        width: 48%;
+    }
+
+
+    .section-one {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2rem 4rem;
+    }
+
+    .img-container,
+    .section-content {
+        width: 45%;
+    }
+
+    .product-items-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .item {
+        width: 45%;
+    }
+
+    .customers-reviews {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 2rem 4rem;
+    }
+
+    .customer h1,
+    .customer p {
+        /* width: 48%; */
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: left;
+        padding: 4rem;
+    }
+
+    footer .container {
+        width: 30%;
+    }
+}
+
+
+
+@media screen and (min-width: 1024px) {
+    .burger {
+        display: none;
+    }
+
+    .item {
+        width: 30%;
+    }
+
+    .customer {
+        width: 30%;
+    }
+
 }
