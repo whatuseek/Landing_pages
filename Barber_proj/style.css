@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --main-color: #37132d --main-font: "Playfair Display", serif;
+    --primary-font: "Roboto", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #111;
+    color: #fff;
+    position: relative;
+}
+
+.logo {
+    font-family: var(--main-font);
+    font-size: 2rem;
+    /* margin-bottom: 1rem; */
+}
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 20px;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 2rem;
+    background-color: #222;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hover animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+
+nav a {
+    text-decoration: none;
+    /* color: #fff; */
+    font-size: 1rem;
+}
+
+header {
+    padding: 2rem 1rem;
+    background-color: #f8f8f8;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header-heading {
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-family: var(--main-font);
+    line-height: 1.2;
+
+}
+
+.header-sub-headings {
+    /* background-color: antiquewhite; */
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-family: var(--primary-font);
+    max-width: 500px;
+    /* margin: 0 auto; */
+    line-height: 1.6;
+    color: #333;
+}
+
+.btn-container {
+    margin-top: 1rem;
+}
+
+.main-btn {
+    text-decoration: none;
+    padding: .7rem 1.5rem;
+    background: #111;
+    color: #fff;
+    font-family: var(--primary-font);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.main-btn:hover {
+    background-color: #333;
+}
+
+.header-img-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 30vh;
+    width: 30%;
+    position: relative;
+}
+
+.img-one {
+    position: absolute;
+    left: 5rem;
+}
+
+.img-two {
+    position: absolute;
+    left: 1rem;
+    top: 5rem
+}
+
+.header-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+}
+
+/* Exp */
+.experience {
+    /* margin-top: 1rem; */
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    height: 70vh;
+
+}
+
+.experience__content {
+    min-width: 600px;
+}
+
+.gray-heading {
+    font-size: 2rem;
+    color: #999;
+}
+
+.experience-headings {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-family: var(--main-font);
+}
+
+.experience__sub-headings {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    line-height: 1.3;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+    /* background-color: aqua; */
+
+}
+
+.experience-img {
+    width: 70%;
+    height: 300px;
+    background: url('./assets/eugene-chystiakov-taZSJ6xmt48-unsplash.jpg') center/cover no-repeat;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 600px) {
+
+
+    .nav-links {
+        display: flex;
+        /* 🔹 Show nav links */
+        flex-direction: row;
+        /* 🔹 Horizontal layout */
+        gap: 2rem;
+        position: static;
+        /* 🔹 Remove absolute positioning */
+        background: none;
+        padding: 0;
+    }
+
+    .burger {
+        display: none;
+        /* 🔹 Hide burger icon */
+    }
+
+
+    .nav ul {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .logo {
+        margin-bottom: 0;
+    }
+
+    .content-container {
+        margin-top: 5rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .header-content {
+        width: 50%;
+    }
+
+    .header-img-container {
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 1.5rem;
+        width: 50%;
+
+    }
+
+    .header-img {
+        max-width: 250px;
+    }
+
+    .experience {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        padding: 4rem 2rem;
+    }
+
+    .experience__content {
+        width: 50%;
+    }
+
+    .experience-img {
+        width: 45%;
+        height: 400px;
+    }
+
+
+}

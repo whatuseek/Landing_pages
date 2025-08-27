@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Barber</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <h1 class="logo">Barber</h1>
+
+        <div class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a href="">Experiences</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="content-container">
+
+            <section class="header-content">
+                <h1 class="header-heading">
+                    THE <br>
+                    BARBERS
+                </h1>
+                <p class="header-sub-headings">
+                    Barber is a person who occupation is mainly to cut dress groom style
+                    and shave men's and boy's hair
+                </p>
+                <div class="btn-container">
+                    <a href="" class="main-btn">Learn More</a>
+                </div>
+            </section>
+            <div class="header-img-container">
+                <img src="./assets/jakob-owens-lkMJcGDZLVs-unsplash.jpg" class="header-img img-one">
+                <img src="./assets/stephan-louis-L3s5QySz5UM-unsplash.jpg" class="header-img img-two">
+            </div>
+
+        </div>
+    </header>
+
+    <section class="experience">
+        <div class="experience__content">
+            <h2 class="gray-heading">30 Years</h2>
+            <h1 class="header__heading experience-headings">EXPERIENCE</h1>
+            <p class="header__sub-headings experience__sub-headings">
+                Barber is a person who occupation is mainly to cut dress groom style
+                and shave men's and boy's hair.
+            </p>
+            <div class="btn-container">
+                <a href="" class="main-btn">Learn More</a>
+            </div>
+        </div>
+        <div class="experience-img"></div>
+    </section>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+
+</html>
